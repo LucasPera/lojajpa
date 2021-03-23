@@ -1,0 +1,14 @@
+jpa é uma especificação para orm (abstração) 
+
+é uma tag persistence-unit para cada banco de dados
+
+estados de uma entidade
+
+transient: objeto foi criado como um objeto comum do java (não esta sendo gerenciado pela jpa ainda) 
+managed: jpa está observando (em.persist) 
+detached: ja ta salvo e foi dado o close ou clear
+removed: quando o em.remove(objeto) é chamado apaga no banco e vai para o estado removed
+
+se der um set depois do persist ele da um update no banco
+
+produto = em.merge(produto): volta o estado de detached para managed
